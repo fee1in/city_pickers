@@ -282,9 +282,7 @@ class _BaseView extends State<BaseView> {
   }
 
   Widget _bottomBuild() {
-    return Theme(
-      data: Theme.of(context).copyWith(highlightColor: Colors.transparent),
-      child: Container(
+    return  Container(
         width: double.infinity,
         color: Theme.of(context).scaffoldBackgroundColor,
         child: new Column(
@@ -293,8 +291,8 @@ class _BaseView extends State<BaseView> {
           children: <Widget>[
             new Row(
               children: <Widget>[
-                FlatButton(
-                  onPressed: () {
+                GestureDetector(
+                  onTap: () {
                     Navigator.pop(context);
                   },
                   child: widget.cancelWidget ??
@@ -305,8 +303,8 @@ class _BaseView extends State<BaseView> {
                         ),
                       ),
                 ),
-                FlatButton(
-                  onPressed: () {
+                GestureDetector(
+                  onTap: () {
                     Navigator.pop(context, _buildResult());
                   },
                   child: widget.confirmWidget ??
@@ -369,7 +367,7 @@ class _BaseView extends State<BaseView> {
               ),
             )
           ],
-        )));
+        ));
   }
 
   Widget build(BuildContext context) {
