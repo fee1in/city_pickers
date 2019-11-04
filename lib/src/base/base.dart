@@ -291,27 +291,27 @@ class _BaseView extends State<BaseView> {
           children: <Widget>[
             new Row(
               children: <Widget>[
-                FlatButton(
-                  onPressed: () {
+                GestureDetector(
+                  onTap: () {
                     Navigator.pop(context);
                   },
                   child: widget.cancelWidget ??
                       new Text(
                         '取消',
                         style: new TextStyle(
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).highlightColor,
                         ),
                       ),
                 ),
-                FlatButton(
-                  onPressed: () {
+                GestureDetector(
+                  onTap: () {
                     Navigator.pop(context, _buildResult());
                   },
                   child: widget.confirmWidget ??
                       new Text(
                         '确定',
                         style: new TextStyle(
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).highlightColor,
                         ),
                       ),
                 ),
